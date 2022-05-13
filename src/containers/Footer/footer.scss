@@ -1,0 +1,20 @@
+$background: #efefef;
+$lfs-blue: #006ac6;
+$lfs-yellow: #fab700;
+$lfs-grey: #75787b;
+footer{
+  width: 100%;
+  margin-left: 220px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #f1f1f1;
+  height:4%;
+}
+.footer-text{
+background: $background;
+color: $lfs-blue;
+margin-left:15px;
+font-weight: 500;
+}
+

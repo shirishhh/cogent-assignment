@@ -19,7 +19,7 @@ const Login = (props) => {
 
     return (
         
-        <div className="d-flex justify-content-center container">
+        <div className="container">
             <div class="d-flex justify-content-center">
             <div className="card login-card">
                 <div >
@@ -28,7 +28,7 @@ const Login = (props) => {
                 <div className="login-text">
                     <span>Login</span>
                     </div>
-                <div>
+                <div className="card-body">
                     <form onSubmit={(e) => {
                         e.preventDefault();
                         props.loginAuthAction(user)
@@ -52,7 +52,13 @@ const Login = (props) => {
                         <button type="submit" className="btn btn-primary">Submit</button>
                         </div>
                     </form>
-                    {props.auth&& <div style={{color:'red',marginTop:'10px'}}>{props.auth}</div>}
+                    {props.auth&& <div style={{color:'red',marginTop:'10px'}}><span>{props.auth}</span>
+                    <br/>
+                    <span>email:demo@gmail.com</span>
+                    <br/>
+                    <span>password:password</span>
+                    </div>
+                    }
                 </div>
             </div>
             </div>
