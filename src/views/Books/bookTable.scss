@@ -1,0 +1,87 @@
+
+$background: #efefef;
+$lfs-blue: #006ac6;
+$lfs-yellow: #fab700;
+$lfs-grey: #75787b;
+
+@mixin button-bg($bg) {
+    background: $bg;
+    &:hover {
+      background:darken($bg,8%);
+      transition: all 0.3s ease;
+    }
+    &:active {
+      background:darken($bg,25%);
+    } 
+  }
+  
+  .btn {
+   color:white;
+   text-decoration:none;
+   padding:5px 10px;
+   border-radius:3px;
+   font-size:1em;
+  }
+  
+  .btn-green {
+     @include button-bg(#055727);
+  }
+  
+  .btn-red {
+     @include button-bg(#e74c3c);
+  }
+  
+  /*Other Stylez*/
+  .wrap {
+    margin:0 auto;
+    width:800px;
+    text-align:center;
+  }
+  .table-msg{
+      align-items: center;
+      color:red
+  }
+body {
+    background-color: $background;
+}
+
+.table-latitude {
+    width: 100%;
+    caption {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $lfs-yellow;
+        text-align: center;
+    }
+    thead {
+        border-top: 2px solid $lfs-yellow;
+        border-bottom: 2px solid $lfs-yellow;
+        th {
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px;
+            color: $lfs-blue;
+            border: 1px solid #F1F1F1;
+        }
+    }
+    tbody {
+        tr {
+            border-bottom: 1px solid #F1F1F1;
+            color: $lfs-grey;
+            td {
+                padding: 10px;
+                border: 1px solid #F1F1F1;
+            }
+            th {
+                padding-left: 10px;
+                border: 1px solid #F1F1F1;
+            }
+        }
+    }
+}
+
+.search-card{
+    padding:10px;
+    margin-bottom: 10px;
+}
+
