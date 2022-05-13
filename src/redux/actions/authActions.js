@@ -1,5 +1,5 @@
 
-export const loginAuthAction = (user,navigate) => {
+export const loginAuthAction = (user) => {
     return async (dispatch) => {
       try {
         const local= localStorage.getItem('auth');
@@ -7,11 +7,16 @@ export const loginAuthAction = (user,navigate) => {
         if(auth.email===user.email&&auth.password===user.password){
             localStorage.setItem('user', JSON.stringify(user));
             window.location.href='/';
-        }
+            dispatch({
+              type:"LOGIN_SUCCESS",
+              payload: "Success",
+            });
+        }else{
         dispatch({
-          type:"LOGIN_SUCCESS",
-          payload: "Success",
+          type:"LOGIN_FAIL",
+          payload: "Invalid email or password",
         });
+      }
       } catch (error) {
         console.error(error);
         dispatch({

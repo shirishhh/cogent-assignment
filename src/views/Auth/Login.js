@@ -2,12 +2,10 @@ import React, { useEffect, useState } from "react";
 import './login.scss'
 import { connect } from "react-redux";
 import { loginAuthAction } from "../../redux/actions/authActions";
-import { useNavigate } from "react-router-dom";
 import books1 from "../../assets/images/books1.png";
 
 
 const Login = (props) => {
-    let navigate = useNavigate();
 
     const [auth] = useState({
         email: 'demo@gmail.com',
@@ -33,8 +31,7 @@ const Login = (props) => {
                 <div>
                     <form onSubmit={(e) => {
                         e.preventDefault();
-                        console.log(user);
-                        props.loginAuthAction(user,navigate)
+                        props.loginAuthAction(user)
                     }}>
                         <div className=" mb-3">
                             <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
@@ -55,6 +52,7 @@ const Login = (props) => {
                         <button type="submit" className="btn btn-primary">Submit</button>
                         </div>
                     </form>
+                    {props.auth&& <div style={{color:'red',marginTop:'10px'}}>{props.auth}</div>}
                 </div>
             </div>
             </div>
